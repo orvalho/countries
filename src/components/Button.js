@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default({buttonText, region, setRegion}) => {
+const Button = ({buttonText, region, setRegion}) => {
   const className = `ui tiny teal ${buttonText === region
     ? 'active'
     : ''} button`;
@@ -9,3 +10,11 @@ export default({buttonText, region, setRegion}) => {
     }} className={className} onClick={() => setRegion(buttonText)}>{buttonText.toUpperCase()}
   </button>);
 };
+
+Button.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+  region: PropTypes.string.isRequired,
+  setRegion: PropTypes.func.isRequired
+};
+
+export default Button;

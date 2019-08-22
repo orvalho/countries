@@ -1,8 +1,8 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import fetchResources from './fetchResources';
 
-export default({region}) => {
+const CountryList = ({region}) => {
   const countries = fetchResources(region);
 
   return (<div className="ui teal segment">
@@ -16,3 +16,9 @@ export default({region}) => {
     </div>
   </div>);
 };
+
+CountryList.propTypes = {
+  region: PropTypes.string.isRequired
+};
+
+export default CountryList;
